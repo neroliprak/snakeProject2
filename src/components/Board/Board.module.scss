@@ -1,0 +1,53 @@
+.board {
+  background: url("../../../public/game_area_background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 525px;
+  height: 525px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+  .background-game {
+    z-index: 999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  // .pause {
+  //   position: fixed;
+  //   bottom: 12px;
+  //   left: 12px;
+  //   background-color: white;
+  //   padding: 24px;
+  //   cursor: pointer;
+  // }
+
+  .score {
+    background: url("./../../../public/background-score.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px 200px;
+    width: 30%;
+    position: absolute;
+    top: 100%;
+    left: -4%;
+  }
+
+  .death {
+    background: url("./../../../public/background-scoreDeath.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    padding: 10px 200px;
+    width: 20%;
+    bottom: 100%;
+    left: 0%;
+  }
+}

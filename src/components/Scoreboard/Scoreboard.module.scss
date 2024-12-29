@@ -1,0 +1,23 @@
+.scoreboard {
+  position: absolute;
+  z-index: 100;
+  left: 10%;
+  top: 15%;
+  color: rgb(168, 50, 50);
+}
+
+.header {
+  span {
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+.header,
+.result {
+  display: flex;
+  gap: 50px;
+
+  span {
+    width: 100px;
+  }
+}

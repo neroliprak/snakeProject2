@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton+SC&family=Palanquin+Dark:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+body {
+  font-family: "League Spartan", sans-serif;
+  margin: 0;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: url("../public/background-game.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+.filter-opcacity {
+  background-color: #202020dd;
+}
+
+.flex {
+  display: flex;
+}
+.align-item {
+  align-items: center;
+}
+
+.toggle-wrapper {
+  position: fixed;
+  top: 40%;
+  right: 15%;
+  z-index: 10;
+}
+
+.flashbang {
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.dropzone {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  outline: none;
+
+  input {
+    outline: none;
+  }
+}
+
+.die-video,
+.nether-video {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 80;
+  object-fit: cover;
+  display: none;
+}
+
+.nether-video {
+  opacity: 0.9;
+  width: 105%;
+  height: 105vh;
+  left: -2.5%;
+  top: -2.5%;
+  transform: scale(1);
+  transform-origin: center;
+  animation: rotatePortal 1s infinite linear;
+}
+
+@keyframes rotatePortal {
+  100% {
+    transform: scale(1.5);
+  }
+}

@@ -1,0 +1,21 @@
+.progressbar {
+  position: absolute;
+  top: 113vh;
+  right: 20%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  -webkit-transform: rotate(90deg);
+  p {
+    margin: 0;
+  }
+}
+
+progress {
+  width: 30%;
+  padding: 20px;
+}
