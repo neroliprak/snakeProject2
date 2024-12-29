@@ -7,9 +7,9 @@ const ProgressBar = ({ progress, gameOver }) => {
   const pourcentage = maxProgress ? (progress / maxProgress) * 100 : 0;
 
   useEffect(() => {
-    if (gameOver) {
+    if (gameOver === true) {
       const audioRedTimeOut = document.getElementById("redTimeOut-music");
-      if (audioRedTimeOut && !audioRedTimeOut.paused) {
+      if (audioRedTimeOut) {
         audioRedTimeOut.pause();
       }
     }
@@ -40,6 +40,9 @@ const ProgressBar = ({ progress, gameOver }) => {
         // Si l'audio est déjà en pause, on le joue
         if (audioRedTimeOut.paused) {
           audioRedTimeOut.currentTime = 0;
+          audioRedTimeOut.play().catch((error) => {
+            console.error("Audio play error: ", error);
+          });
         }
       }
     } else {

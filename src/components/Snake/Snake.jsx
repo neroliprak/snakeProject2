@@ -17,7 +17,7 @@ const Snake = ({ data, color, colorArray, setColorArray }) => {
     let background = null;
 
     if (i === data.length - 1) {
-      background = `url('/dj-snake-skin15px.svg')`; // Tête du serpent
+      background = `url('${skin || "/dj-snake-skin15px.svg"}')`; // Tête du serpent
     } else if (i === data.length - 2) {
       background = `url('/cleSol.svg')`; // Avant dernier dot
     } else {

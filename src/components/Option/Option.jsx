@@ -1,7 +1,17 @@
 import React from "react";
 import s from "./Option.module.scss";
+import useStore from "../../utils/store";
+import { useState } from "react";
 
 const Option = ({ setDifficulty, setTimeOut }) => {
+  const { setSkin } = useStore();
+  const [selectedSkin, setSelectedSkin] = useState(null);
+
+  const handleSkinSelection = (urlSkin) => {
+    setSkin(urlSkin);
+    setSelectedSkin(urlSkin);
+  };
+
   const handleDifficultyChange = (e) => {
     const value = e.target.value;
     setDifficulty(value);
@@ -19,19 +29,29 @@ const Option = ({ setDifficulty, setTimeOut }) => {
         <div className={s.option1}>
           <p className={s.optionTitle}>Choose your skin</p>
           <div className={s.wrapSkin}>
-            <div className={s.wrapSkin1}>
+            <div
+              onClick={() => handleSkinSelection("./dj-snake-skin15px.svg")}
+              className={`${s.wrapSkin1} ${
+                selectedSkin === "./dj-snake-skin15px.svg" ? s.selected : ""
+              }`}
+            >
               <img className={s.skin1} src="./dj-snake-skin1.png" alt="" />
               <p>Dj Snake</p>
             </div>
-            <div className={s.wrapSkin2}>
-              <img className={s.skin2} src="./snake-skin2.png" alt="" />
+            <div
+              onClick={() => handleSkinSelection("./snake-skin2.svg")}
+              className={`${s.wrapSkin2} ${
+                selectedSkin === "./snake-skin2.svg" ? s.selected : ""
+              }`}
+            >
+              <img className={s.skin2} src="./snake-skin2.svg" alt="" />
               <p>Snake</p>
             </div>
           </div>
         </div>
         <div className={s.option2}>
           <label htmlFor="time">
-            <p className={s.optionTitle}>Choose your timing</p>
+            <p className={s.optionTitle}>Choose your timing before die</p>
           </label>
           <br />
           <div className="align-item">

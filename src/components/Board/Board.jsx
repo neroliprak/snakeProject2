@@ -404,7 +404,7 @@ const Board = ({ difficulty, timeOut }) => {
             loop
             autoPlay
           />
-          <audio id="redTimeOut-music" src="/redTimeOut.mp3" loop />
+          <audio id="redTimeOut-music" src="/redTimeOut.mp3" />
 
           <audio id="sound-do" src="/soundDo.mp3" />
           <audio id="sound-re" src="/soundRe.mp3" />
