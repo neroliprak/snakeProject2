@@ -64,7 +64,7 @@ const ProgressBar = ({ progress, gameOver }) => {
     <>
       {showWarning && (
         <div className={s.popupWarningYellow}>
-          <p>Attention, vous n'êtes pas en rythme ! Mangez des notes</p>
+          <p>Attention ! Mangez vite des notes</p>
         </div>
       )}
       <div className={s.progressbar}>

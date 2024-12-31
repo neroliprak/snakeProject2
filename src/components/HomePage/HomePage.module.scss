@@ -11,8 +11,8 @@
   font-family: "Righteous", sans-serif;
   margin: 0;
   font-size: 120px;
-  padding-left: 10%;
-  padding-top: 10%;
+  padding: 10%;
+  padding-bottom: 0px;
   color: white;
 }
 
@@ -44,6 +44,22 @@
   border-radius: 10px;
   cursor: pointer;
 }
+.startGame:hover,
+.quitGame:hover {
+  animation: glowText 1.5s infinite;
+}
+
+@keyframes glowText {
+  0% {
+    text-shadow: 0 0 5px #ffffff99, 0 0 10px #ffffff99, 0 0 15px #ffffff99;
+  }
+  50% {
+    text-shadow: 0 0 10px #ffffff99, 0 0 20px #ffffff99, 0 0 30px #ffffff99;
+  }
+  100% {
+    text-shadow: 0 0 5px #ffffff99, 0 0 10px #ffffff99, 0 0 15px #ffffff99;
+  }
+}
 
 .startGame::after,
 .quitGame::after {
@@ -73,5 +89,35 @@
 
 .startGame:hover img,
 .quitGame:hover img {
-  transform: scale(1.3);
+  transform: scale(1.2);
+}
+.options {
+  width: 5%;
+  z-index: 999;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 51%;
+  transform: translate(-50%, -50%);
+}
+.options img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  animation: rotate 10s linear infinite;
+  margin: 0 auto;
+}
+.options p {
+  text-align: center;
+  align-items: center;
+}
+
+/* Définition de l'animation */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); /* L'image commence à 0° */
+  }
+  100% {
+    transform: rotate(360deg); /* L'image finit après un tour complet */
+  }
 }

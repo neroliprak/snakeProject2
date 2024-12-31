@@ -281,7 +281,7 @@ const Board = ({ difficulty, timeOut }) => {
     trapTimer.current += deltaTime * 0.001;
 
     // ici, gestion de l'apparition de la nourriture
-    if (foodTimer.current > 2 && foodArray.length < 20) {
+    if (foodTimer.current > 2 && foodArray.length < 50) {
       foodTimer.current = 0;
       addItem({
         getter: foodArray,

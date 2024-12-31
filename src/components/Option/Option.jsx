@@ -63,7 +63,7 @@ const Option = ({ setDifficulty, setTimeOut }) => {
               name="time"
               min="1"
               max="1000"
-              placeholder="60"
+              placeholder="20"
             ></input>
             <span className={s.seconde}>s</span>
           </div>

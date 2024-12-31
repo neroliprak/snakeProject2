@@ -2,11 +2,29 @@
 import React from "react";
 import s from "./HomePage.module.scss";
 import Option from "../Option/Option";
+import gsap from "gsap";
+import { useState, useEffect } from "react";
 
 const HomePage = ({ handleStartGame, setDifficulty, setTimeOut }) => {
+  const [showOptions, setShowOptions] = useState(true);
+
+  const toggleOptions = () => {
+    setShowOptions(!showOptions);
+  };
+
   const quitGame = () => {
     window.close();
   };
+  useEffect(() => {
+    if (showOptions) {
+      gsap.fromTo(
+        `.${s.partRight}`,
+        { x: "100%", opacity: 0 },
+        { x: "0%", opacity: 1, duration: 1 }
+      );
+    }
+  }, [showOptions]);
+
   return (
     <>
       <div className={s.homePage}>
@@ -21,11 +39,17 @@ const HomePage = ({ handleStartGame, setDifficulty, setTimeOut }) => {
               <img src="./logo-quit.svg" alt="" />
               <p>Quit Game</p>
             </div>
+            <p onClick={toggleOptions} className={s.options}>
+              <img className={s.optionsImage} src="/options.svg" alt="" />
+              <p>Options</p>
+            </p>
           </div>
         </div>
-        <div className={s.partRight}>
-          <Option setDifficulty={setDifficulty} setTimeOut={setTimeOut} />
-        </div>
+        {showOptions && (
+          <div className={s.partRight}>
+            <Option setDifficulty={setDifficulty} setTimeOut={setTimeOut} />
+          </div>
+        )}
       </div>
     </>
   );
