@@ -5,6 +5,7 @@ const ProgressBar = ({ progress, gameOver }) => {
   const [maxProgress, setMaxProgress] = useState(null);
   const roundedProgress = Math.ceil(progress);
   const pourcentage = maxProgress ? (progress / maxProgress) * 100 : 0;
+  const [showWarning, setShowWarning] = useState(false);
 
   useEffect(() => {
     if (gameOver === true) {
@@ -51,22 +52,35 @@ const ProgressBar = ({ progress, gameOver }) => {
         audioRedTimeOut.pause();
       }
     }
+
+    if (progress > 0 && pourcentage <= 50) {
+      setShowWarning(true);
+    } else {
+      setShowWarning(false);
+    }
   }, [progress, pourcentage, maxProgress]);
 
   return (
-    <div className={s.progressbar}>
-      <p>{roundedProgress} s</p>
-      <progress
-        style={{
-          accentColor: progressColor,
-        }}
-        id="file"
-        max={maxProgress || 100} // Assurez-vous que `max` a une valeur par défaut
-        value={progress}
-      >
-        {progress}
-      </progress>
-    </div>
+    <>
+      {showWarning && (
+        <div className={s.popupWarningYellow}>
+          <p>Attention, vous n'êtes pas en rythme ! Mangez des notes</p>
+        </div>
+      )}
+      <div className={s.progressbar}>
+        <p>{roundedProgress} s</p>
+        <progress
+          style={{
+            accentColor: progressColor,
+          }}
+          id="file"
+          max={maxProgress || 100}
+          value={progress}
+        >
+          {progress}
+        </progress>
+      </div>
+    </>
   );
 };
 

@@ -1,12 +1,36 @@
 .btn {
   padding: 12px 24px;
   position: fixed;
-  top: 85%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 100;
-  border: solid 1px red;
+  border: solid 1px #52ff8f;
   background-color: transparent;
-  color: red;
+  color: #52ff8f;
   cursor: pointer;
+  transition: 0.2s ease;
+}
+.btn:hover {
+  background-color: #52ff8f;
+  color: black;
+}
+.score {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 30px;
+  border-radius: 10px;
+  border: solid white 1px;
+  z-index: 999;
+  color: white;
+}
+.textDeath {
+  z-index: 999;
+  color: white;
+  position: absolute;
+  top: 66%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

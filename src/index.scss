@@ -27,10 +27,15 @@ body {
 }
 
 .toggle-wrapper {
+  color: white;
   position: fixed;
   top: 40%;
   right: 15%;
   z-index: 10;
+  background-color: rgba(0, 0, 0, 0.675);
+  padding: 20px 20px;
+  border-radius: 20px;
+  border: 1px solid #52ff8f;
 }
 
 .flashbang {
@@ -85,5 +90,16 @@ body {
 @keyframes rotatePortal {
   100% {
     transform: scale(1.5);
+  }
+}
+
+@media (max-width: 1275px) {
+  .toggle-wrapper {
+    right: 5%;
+  }
+}
+@media (max-width: 1040px) {
+  .toggle-wrapper {
+    right: 0%;
   }
 }

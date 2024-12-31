@@ -19,3 +19,52 @@ progress {
   width: 30%;
   padding: 20px;
 }
+
+.popupWarningYellow {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 0, 0, 0.365);
+  border: solid 2px rgba(255, 0, 0, 0.707);
+  border-radius: 20px;
+  padding: 10px 20px;
+  animation: pulse 0.2s ease-out infinite;
+  z-index: 999;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1450px) {
+  .progressbar {
+    top: 100vh;
+    left: -25%;
+  }
+}
+
+@media (max-width: 1172px) {
+  .progressbar {
+    top: 90vh;
+    left: -35%;
+  }
+}
+
+@media (max-width: 820px) {
+  .progressbar {
+    top: 80vh;
+    left: -40%;
+  }
+}

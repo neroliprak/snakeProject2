@@ -79,6 +79,7 @@ const Option = ({ setDifficulty, setTimeOut }) => {
             id="difficulty"
             name="difficulty"
           >
+            <option value="100">Sur 30</option>
             <option value="100">Sur 100</option>
             <option value="200">Sur 200</option>
             <option value="300">Sur 300</option>

@@ -1,4 +1,4 @@
-import React, { useState } from "react"; // Importation des hooks React
+import React, { useState } from "react";
 import Board from "./components/Board/Board";
 import Toggle from "./components/Toggle/Toggle";
 import { useDropzone } from "react-dropzone";
@@ -7,7 +7,7 @@ import HomePage from "./components/HomePage/HomePage"; // Importation de la Home
 
 function App() {
   const { skin, setSkin } = useStore();
-  const [difficulty, setDifficulty] = useState(100); // État de la difficulté sélectionné
+  const [difficulty, setDifficulty] = useState(30); // État de la difficulté sélectionné
   const [timeOut, setTimeOut] = useState(20);
   console.log(timeOut);
   const [gameStarted, setGameStarted] = useState(false); // État pour savoir si le jeu a commencé
@@ -82,6 +82,7 @@ function App() {
           <div className="flashbang"></div>
           {/* Wrapper pour les toggles de mode */}
           <div className="toggle-wrapper">
+            <p>Choisissez un mode</p>
             <Toggle mode={"corner"} />
             <Toggle mode={"impossible"} />
             <Toggle mode={"reversed"} />

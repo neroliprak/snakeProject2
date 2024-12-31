@@ -63,6 +63,7 @@ const Board = ({ difficulty, timeOut }) => {
 
   const gameIsOver = () => {
     gsap.ticker.remove(gameLoop);
+    setProgress(0);
 
     setDeath(death + 1);
 
@@ -382,13 +383,27 @@ const Board = ({ difficulty, timeOut }) => {
   return (
     <>
       {gameVictory && (
-        <Victory replay={replay} setGameVictory={setGameVictory} />
+        <>
+          <Victory
+            replay={replay}
+            setGameVictory={setGameVictory}
+            score={score}
+            difficulty={difficulty}
+          />
+        </>
       )}
 
       {!gameVictory && (
         <>
           <ProgressBar progress={progress} GameOver={gameOver} />
-          {gameOver && <GameOver replay={replay} />}
+          {gameOver && (
+            <GameOver
+              replay={replay}
+              score={score}
+              difficulty={difficulty}
+              death={death}
+            />
+          )}
           {gameOver && !hasEnteredResults && (
             <Submit
               score={score}
