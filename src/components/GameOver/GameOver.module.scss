@@ -1,13 +1,21 @@
+.death {
+  position: absolute;
+  z-index: 100;
+  left: 50%;
+  top: 20%;
+  color: #ffffff;
+}
+
 .btn {
   padding: 12px 24px;
-  position: fixed;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: absolute;
+  left: -50%;
+  top: 75%;
+  width: 40%;
   z-index: 100;
   border: solid 1px #52ff8f;
-  background-color: transparent;
-  color: #52ff8f;
+  background-color: #52ff8f;
+  color: #000000;
   cursor: pointer;
   transition: 0.2s ease;
 }
@@ -16,21 +24,31 @@
   color: black;
 }
 .score {
-  position: absolute;
-  top: 70%;
-  left: 50%;
+  text-align: center;
+  font-size: 2rem;
   transform: translate(-50%, -50%);
   padding: 10px 30px;
   border-radius: 10px;
-  border: solid white 1px;
   z-index: 999;
-  color: white;
+  color: rgb(0, 0, 0);
+  background-color: white;
 }
 .textDeath {
+  font-size: 1.2rem;
   z-index: 999;
   color: white;
-  position: absolute;
-  top: 66%;
-  left: 50%;
+
   transform: translate(-50%, -50%);
+}
+.btnMenu {
+  position: absolute;
+  top: 75%;
+  width: 40%;
+  border: solid 1px #52ff8f;
+  transition: 0.2s ease;
+  cursor: pointer;
+  padding: 12px 24px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #52ff8f;
+  margin-left: 30px;
 }

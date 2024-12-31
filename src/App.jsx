@@ -58,12 +58,14 @@ function App() {
           {/* <img className="background-game" src="/background-game.jpg" alt="" /> */}
           <Board difficulty={difficulty} timeOut={timeOut} />
           {/* Vidéos de fond */}
-          <video
-            src="/you-died.mp4"
-            id="die-video"
-            className="die-video"
-            muted
-          ></video>
+          <div className="filter-opcacity">
+            <video
+              src="/deathShark.mp4"
+              id="die-video"
+              className="die-video"
+              muted
+            ></video>
+          </div>
           <video
             src="/nether.mp4"
             id="nether-video"

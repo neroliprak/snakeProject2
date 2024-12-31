@@ -99,6 +99,11 @@
   top: 50%;
   left: 51%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.options img:hover {
+  animation: none;
 }
 .options img {
   width: 100%;

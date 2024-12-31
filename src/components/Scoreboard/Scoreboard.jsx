@@ -16,7 +16,9 @@ const Scoreboard = () => {
         {results.map((result, i) => (
           <div className={s.result} key={result.name + i}>
             <span>{result.name}</span>
-            <span>{result.score}</span>
+            <span>
+              {result.score} / {result.difficulty}
+            </span>
             <span>{result.death}</span>
           </div>
         ))}

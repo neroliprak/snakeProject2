@@ -3,7 +3,7 @@ import { useState } from "react";
 import useStore from "../../utils/store";
 import s from "./Submit.module.scss";
 
-const Submit = ({ score, death, setHasEnteredResults }) => {
+const Submit = ({ score, death, setHasEnteredResults, difficulty }) => {
   const [name, setName] = useState("");
   const { setResults } = useStore();
 
@@ -14,7 +14,7 @@ const Submit = ({ score, death, setHasEnteredResults }) => {
     if (results) {
       setResults(results);
     }
-  }, []);
+  }, [setResults]);
 
   const onSubmit = (e) => {
     //empêcher la page de reload
@@ -30,6 +30,7 @@ const Submit = ({ score, death, setHasEnteredResults }) => {
           name: name,
           score: score,
           death: death,
+          difficulty: difficulty,
         },
       ];
       setResults(results);
@@ -39,6 +40,7 @@ const Submit = ({ score, death, setHasEnteredResults }) => {
         name: name,
         score: score,
         death: death,
+        difficulty: difficulty,
       });
 
       localStorage.setItem("results", JSON.stringify(results));

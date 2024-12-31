@@ -397,21 +397,26 @@ const Board = ({ difficulty, timeOut }) => {
         <>
           <ProgressBar progress={progress} GameOver={gameOver} />
           {gameOver && (
-            <GameOver
-              replay={replay}
-              score={score}
-              difficulty={difficulty}
-              death={death}
-            />
+            <>
+              {!hasEnteredResults && (
+                <Submit
+                  score={score}
+                  death={death}
+                  difficulty={difficulty}
+                  setHasEnteredResults={setHasEnteredResults}
+                />
+              )}
+              <GameOver
+                replay={replay}
+                score={score}
+                difficulty={difficulty}
+                death={death}
+              />
+
+              <Scoreboard />
+            </>
           )}
-          {gameOver && !hasEnteredResults && (
-            <Submit
-              score={score}
-              death={death}
-              setHasEnteredResults={setHasEnteredResults}
-            />
-          )}
-          {gameOver && <Scoreboard />}
+
           {/* Le tableau de jeu avec le serpent, la nourriture et les pièges */}
           <audio
             id="background-music"

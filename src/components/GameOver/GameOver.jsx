@@ -27,14 +27,19 @@ const GameOver = ({ replay, score, difficulty, death }) => {
   return (
     <div className={s.death}>
       <p className={s.textDeath}>
-        {textDeath} ({death} morts)
+        {textDeath} ({death} ☠️)
       </p>
       <p className={s.score}>
-        Votre score est de : {score} / {difficulty}
+        {score} / {difficulty}
       </p>
-      <button onClick={replay} className={s.btn}>
-        Replay
-      </button>
+      <div className="flex">
+        <button onClick={replay} className={s.btn}>
+          Replay
+        </button>
+        <button onClick={() => window.location.reload()} className={s.btnMenu}>
+          Menu
+        </button>
+      </div>
     </div>
   );
 };
