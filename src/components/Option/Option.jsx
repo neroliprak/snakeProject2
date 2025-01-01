@@ -51,7 +51,7 @@ const Option = ({ setDifficulty, setTimeOut }) => {
         </div>
         <div className={s.option2}>
           <label htmlFor="time">
-            <p className={s.optionTitle}>Choose your timing before die</p>
+            <p className={s.optionTitle}>Choose your countdown</p>
           </label>
           <br />
           <div className="align-item">
@@ -79,10 +79,10 @@ const Option = ({ setDifficulty, setTimeOut }) => {
             id="difficulty"
             name="difficulty"
           >
-            <option value="100">Sur 30</option>
-            <option value="100">Sur 100</option>
-            <option value="200">Sur 200</option>
-            <option value="300">Sur 300</option>
+            <option value="100">Reach 30 pts</option>
+            <option value="100">Reach 100 pts</option>
+            <option value="200">Reach 200 pts</option>
+            <option value="300">Reach 300 pts</option>
           </select>
         </div>
       </div>
